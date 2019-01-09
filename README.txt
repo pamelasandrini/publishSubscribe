@@ -1,8 +1,8 @@
 Run as: mvn clean install spring-boot:run
 
 The main URL to access the project is:
-http://localhost:8080/hellospringboot
+http://localhost:9080/
 
-or pass your name as parameter:
+or publish a notification to subscribers
 
-http://localhost:8080/hellospringboot/YourName
+http://localhost:9080/rest
