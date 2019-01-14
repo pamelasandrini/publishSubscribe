@@ -3,7 +3,9 @@ package com.sprint.eai.designpattern.broker;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sprint.eai.designpattern.vo.Message;
 import com.sprint.eai.designpattern.vo.Subscriber;
+import com.sprint.eai.designpattern.vo.Topic;
 
 public class Broker {
 
@@ -11,8 +13,8 @@ public class Broker {
 
 		List<Subscriber> defaultSuscribers = new ArrayList<>();
 
-		Subscriber sub1 = new Subscriber("Mike", "dog");
-		Subscriber sub2 = new Subscriber("Ellen", "cat");
+		Subscriber sub1 = new Subscriber("Mike", Topic.Android);
+		Subscriber sub2 = new Subscriber("Ellen", Topic.Iphone);
 
 		defaultSuscribers.add(sub1);
 		defaultSuscribers.add(sub2);
@@ -21,7 +23,7 @@ public class Broker {
 
 	}
 
-	public boolean sendMessage(String message) {
+	public boolean sendMessage(Message message) {
 
 		boolean messageSent = false;
 
@@ -29,8 +31,8 @@ public class Broker {
 
 		for (Subscriber subscriber : defaultSuscribers) {
 
-			if (message.contains(subscriber.getTopic())) {
-				subscriber.setMessage(message);
+			if (message.getTopic().equals(subscriber.getTopic().name())) {
+				subscriber.setMessage(message.getText());
 				messageSent = true;
 			}
 		}

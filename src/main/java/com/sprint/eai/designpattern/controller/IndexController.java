@@ -10,4 +10,9 @@ public class IndexController {
 	public String index() {
 		return "index";
 	}
+	
+	@RequestMapping("publish")
+	public String publish() {
+		return "publish";
+	}
 }

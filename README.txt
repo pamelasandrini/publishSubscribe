@@ -5,4 +5,4 @@ http://localhost:9080/
 
 or publish a notification to subscribers
 
-http://localhost:9080/rest
+http://localhost:9080/publish

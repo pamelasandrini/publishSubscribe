@@ -10,11 +10,11 @@ public class Subscriber {
 
 	private String messageRegex;
 
-	private String topic;
+	private Topic topic;
 
 	private String message;
 
-	public Subscriber(String name, String topic) {
+	public Subscriber(String name, Topic topic) {
 
 		this.name = name;
 		this.topic = topic;
@@ -42,20 +42,16 @@ public class Subscriber {
 		this.messageRegex = messageRegex;
 	}
 
-	public String getTopic() {
-		return topic;
-	}
-
-	public void setTopic(String topic) {
-		this.topic = topic;
-	}
-
 	public String getMessage() {
 		return message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Topic getTopic() {
+		return topic;
 	}
 
 }
