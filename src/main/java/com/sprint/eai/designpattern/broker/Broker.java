@@ -24,7 +24,7 @@ public class Broker {
 
 		for (Subscriber subscriber : subscribers) {
 
-			if (topic.equals(subscriber.getTopic())) {
+			if (topic.equalsIgnoreCase(subscriber.getTopic())) {
 
 				Message message = new Message(subscriber.getId(), text, false);
 				messageDao.createMessage(message);
