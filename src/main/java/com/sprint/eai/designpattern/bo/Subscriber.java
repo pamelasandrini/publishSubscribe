@@ -1,8 +1,5 @@
 package com.sprint.eai.designpattern.bo;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Subscriber {
 
 	private long id;
@@ -10,8 +7,6 @@ public class Subscriber {
 	private String name;
 
 	private String topic;
-
-	private List<String> messages = new ArrayList<>();
 
 	public Subscriber() {
 
@@ -52,14 +47,6 @@ public class Subscriber {
 
 	public void setTopic(String topic) {
 		this.topic = topic;
-	}
-
-	public List<String> getMessages() {
-		return messages;
-	}
-
-	public void addMessage(String message) {
-		this.messages.add(message);
 	}
 
 }

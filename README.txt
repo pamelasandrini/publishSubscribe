@@ -19,3 +19,18 @@ http://localhost:9080/subscriber/{id}
 
 Get
 http://localhost:9080/subscriber/all
+
+
+Publish service:
+
+Post
+http://localhost:9080/publish
+
+
+Message services:
+
+Get
+http://localhost:9080/message/{subscriberId}
+
+Get
+http://localhost:9080/message/all

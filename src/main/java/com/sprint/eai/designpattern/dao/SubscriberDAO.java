@@ -6,7 +6,7 @@ import com.sprint.eai.designpattern.bo.Subscriber;
 
 public interface SubscriberDAO {
 	
-	public long createSubscribe(Subscriber subscribe);
+	public long createSubscriber(Subscriber subscriber);
 	
 	public Subscriber getSubscriberById(long id);
 	

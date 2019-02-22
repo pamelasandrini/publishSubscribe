@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sprint.eai.designpattern.bo.Message;
 import com.sprint.eai.designpattern.broker.Broker;
 
 @RestController
@@ -24,9 +23,7 @@ public class PublishService {
 		System.out.println("topic: " + topic);
 		System.out.println("text: " + text);
 
-		Message message = new Message(topic, text);
-
-		boolean messageSent = messageBroker.sendMessage(message);
+		boolean messageSent = messageBroker.sendMessage(topic, text);
 
 		return messageSent ? "success" : "error";
 	}

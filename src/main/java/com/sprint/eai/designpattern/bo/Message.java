@@ -2,31 +2,60 @@ package com.sprint.eai.designpattern.bo;
 
 public class Message {
 
-	private String topic;
-	private String text;
+	private long id;
+	private long subscriberId;
+	private String message;
+	private boolean read;
 
 	public Message() {
+		super();
 	}
 
-	public Message(String topic, String text) {
-		this.topic = topic;
-		this.text = text;
+	public Message(long id, long subscriberId, String message, boolean read) {
+		super();
+		this.id = id;
+		this.subscriberId = subscriberId;
+		this.message = message;
+		this.read = read;
 	}
 
-	public String getTopic() {
-		return topic;
+	public Message(long subscriberId, String message, boolean read) {
+		super();
+		this.subscriberId = subscriberId;
+		this.message = message;
+		this.read = read;
 	}
 
-	public void setTopic(String topic) {
-		this.topic = topic;
+	public long getSubscriberId() {
+		return subscriberId;
 	}
 
-	public String getText() {
-		return text;
+	public void setSubscriberId(long subscriberId) {
+		this.subscriberId = subscriberId;
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public boolean isRead() {
+		return read;
+	}
+
+	public void setRead(boolean read) {
+		this.read = read;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 }

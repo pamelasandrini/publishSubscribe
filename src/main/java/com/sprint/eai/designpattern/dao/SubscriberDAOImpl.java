@@ -15,17 +15,17 @@ import com.sprint.eai.designpattern.bo.Subscriber;
 public class SubscriberDAOImpl implements SubscriberDAO {
 
 	@Override
-	public long createSubscribe(Subscriber subscribe) {
+	public long createSubscriber(Subscriber subscriber) {
 
 		String sql = "INSERT INTO SUBSCRIBER (NAME, TOPIC) VALUES (? , ?)";
 
-		System.out.println("calling createSubscribe");
+		System.out.println("calling createSubscriber");
 		ResultSet generatedKeys = null;
 
 		try (Connection conn = ConnectionFactory.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-			stmt.setString(1, subscribe.getName());
-			stmt.setString(1, subscribe.getTopic());
+			stmt.setString(1, subscriber.getName());
+			stmt.setString(2, subscriber.getTopic());
 
 			int execRow = stmt.executeUpdate();
 
@@ -46,7 +46,6 @@ public class SubscriberDAOImpl implements SubscriberDAO {
 		} finally {
 			DbUtils.closeQuietly(generatedKeys);
 		}
-
 	}
 
 	@Override
@@ -77,7 +76,7 @@ public class SubscriberDAOImpl implements SubscriberDAO {
 
 		} catch (SQLException e) {
 
-			System.out.println("exception in getAccountById - " + e);
+			System.out.println("exception in getSubscriberById - " + e);
 			return null;
 		}
 
@@ -97,7 +96,7 @@ public class SubscriberDAOImpl implements SubscriberDAO {
 
 			while (rs.next()) {
 
-				long id = rs.getLong("ACCOUNT_NO");
+				long id = rs.getLong("ID");
 				String name = rs.getString("NAME");
 				String topic = rs.getString("TOPIC");
 
@@ -109,7 +108,7 @@ public class SubscriberDAOImpl implements SubscriberDAO {
 
 		} catch (SQLException e) {
 
-			System.out.println("exception in getAccountList - " + e);
+			System.out.println("exception in getAllSubscribers - " + e);
 			return Collections.emptyList();
 		}
 
