@@ -1,4 +1,4 @@
-package com.sprint.eai.designpattern.vo;
+package com.sprint.eai.designpattern.bo;
 
 public class Message {
 

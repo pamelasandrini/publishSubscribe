@@ -5,16 +5,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sprint.eai.designpattern.bo.Message;
 import com.sprint.eai.designpattern.broker.Broker;
-import com.sprint.eai.designpattern.vo.Message;
 
 @RestController
 @RequestMapping("/publish")
-public class PublishRest {
+public class PublishService {
 
 	private Broker messageBroker = new Broker();
 
-	@PostMapping("/publish")
+	@PostMapping
 	public String publish(@RequestParam(value = "message", required = true) String text,
 			@RequestParam(value = "topic", required = true) String topic) {
 

@@ -16,8 +16,6 @@ public class CustomizationBean implements EmbeddedServletContainerCustomizer {
 	@Override
 	public void customize(ConfigurableEmbeddedServletContainer container) {
 
-		// define main url
-//		container.setContextPath("/hellospringboot");
 		container.setPort(9080);
 
 	}
